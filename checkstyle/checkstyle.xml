@@ -7,7 +7,7 @@
 
     <module name="TreeWalker">
 
-        <!--        Importes (Cobater uso indevido do * Video do Gabriel falando)-->
+        <!--        Importes (Combater uso indevido do * Video do Gabriel falando)-->
         <!--        https://checkstyle.org/checks/imports/index.html -->
         <module name="AvoidStarImport"/>
         <module name="AvoidStaticImport"/>
@@ -15,6 +15,39 @@
         <module name="ImportOrder"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
+
+<!--        Complexidade do Codigo -->
+        <module name="CyclomaticComplexity"/>
+        <module name="BooleanExpressionComplexity"/>
+
+<!--        maximo possivel de retornos-->
+        <module name="ReturnCount">
+            <property name="max" value="3"/>
+        </module>
+
+        <!--        Conversoes de Nomeclatura (Cobater más praticas Pedidos no documento)-->
+        <!--        https://checkstyle.org/checks/naming/index.html-->
+        <module name="AbbreviationAsWordInName"/>
+        <module name="CatchParameterName"/>
+        <module name="ClassTypeParameterName"/>
+        <module name="ConstantName"/>
+        <module name="IllegalIdentifierName"/>
+        <module name="LocalFinalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="PatternVariableName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+        <!--        Uso de Colchetes-->
+        <module name="NeedBraces"/>
+
+        <!--        IDENTACAO-->
+        <module name="Indentation"/>
 
     </module>
 
