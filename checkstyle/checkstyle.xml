@@ -49,6 +49,27 @@
         <!--        IDENTACAO-->
         <module name="Indentation"/>
 
+
+        <!--        espaços em Branco-->
+
+        <module name="EmptyLineSeparator"/>
+        <module name="NoLineWrap"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="ParenPad"/>
+        <module name="WhitespaceAround"/>
+
+        <!--        Tamnaho do Arquivo-->
+        <!--        https://checkstyle.org/checks/sizes/index.html-->
+        <module name="MethodCount"/>
+        <module name="ParameterNumber"/>
+
+    </module>
+
+    <!--        Tamnaho do Arquivo-->
+    <!--        https://checkstyle.org/checks/sizes/index.html-->
+    <module name="FileLength"/>
+    <module name="LineLength">
+        <property name="max" value="120"/>
     </module>
 
 
