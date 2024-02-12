@@ -35,7 +35,7 @@ public class Stock {
 
     public double changePrice(double amount) {
 
-        if (amount < this.price | amount > this.price) {
+        if (amount < this.price || amount > this.price) {
             return increasePrice(amount);
         } else {
             return decreasePrice(amount);
