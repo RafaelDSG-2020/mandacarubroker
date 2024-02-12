@@ -27,7 +27,7 @@ public class Stock {
 
     private double price;
 
-    public Stock(RequestStockDTO requestStockDTO) {
+    public Stock(RequestStockDto requestStockDTO) {
         this.symbol = requestStockDTO.symbol();
         this.companyName = requestStockDTO.companyName();
         this.price = changePrice(requestStockDTO.price());

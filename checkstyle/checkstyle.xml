@@ -49,6 +49,9 @@
         <!--        IDENTACAO-->
         <module name="Indentation"/>
 
+<!--        Abrevicao-->
+        <module name="AbbreviationAsWordInName"/>
+
 
         <!--        espaços em Branco-->
 
