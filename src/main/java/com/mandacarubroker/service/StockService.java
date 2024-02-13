@@ -35,7 +35,7 @@ public class StockService {
 
     public Stock createStock(RequestStockDto data) {
         Stock novaAcao = new Stock(data);
-        validateRequestStockDTO(data);
+        validateRequestStockDto(data);
         return stockRepository.save(novaAcao);
     }
 
@@ -55,7 +55,7 @@ public class StockService {
         stockRepository.deleteById(id);
     }
 
-    public static void validateRequestStockDTO(RequestStockDto data) {
+    public static void validateRequestStockDto(RequestStockDto data) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         Set<ConstraintViolation<RequestStockDto>> violations = validator.validate(data);
@@ -74,7 +74,7 @@ public class StockService {
     }
 
     public void validateAndCreateStock(RequestStockDto data) {
-        validateRequestStockDTO(data);
+        validateRequestStockDto(data);
 
         Stock novaAcao = new Stock(data);
         stockRepository.save(novaAcao);

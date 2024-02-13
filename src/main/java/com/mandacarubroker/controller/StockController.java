@@ -53,8 +53,13 @@ public class StockController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteStock(@PathVariable String id) {
-        stockService.deleteStock(id);
+    public ResponseEntity<String> deleteStock(@PathVariable String id) {
+        try {
+            stockService.deleteStock(id);
+            return ResponseEntity.ok().body("Stock with ID " + id + " was deleted successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error deleting stock with ID " + id + ": " + e.getMessage());
+        }
     }
 
 }
