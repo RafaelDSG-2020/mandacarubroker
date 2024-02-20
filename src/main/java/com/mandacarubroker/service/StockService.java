@@ -1,6 +1,6 @@
 package com.mandacarubroker.service;
 
-import com.mandacarubroker.domain.stock.RequestStockDto;
+import com.mandacarubroker.domain.stock.RequestStockDTO;
 import com.mandacarubroker.domain.stock.Stock;
 import com.mandacarubroker.domain.stock.StockRepository;
 import jakarta.validation.ConstraintViolation;
@@ -33,9 +33,9 @@ public class StockService {
         return stockRepository.findById(id);
     }
 
-    public Stock createStock(RequestStockDto data) {
+    public Stock createStock(RequestStockDTO data) {
         Stock novaAcao = new Stock(data);
-        validateRequestStockDto(data);
+        validateRequestStockDTO(data);
         return stockRepository.save(novaAcao);
     }
 
@@ -55,15 +55,15 @@ public class StockService {
         stockRepository.deleteById(id);
     }
 
-    public static void validateRequestStockDto(RequestStockDto data) {
+    public static void validateRequestStockDTO(RequestStockDTO data) {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
-        Set<ConstraintViolation<RequestStockDto>> violations = validator.validate(data);
+        Set<ConstraintViolation<RequestStockDTO>> violations = validator.validate(data);
 
         if (!violations.isEmpty()) {
             StringBuilder errorMessage = new StringBuilder("Validation failed. Details: ");
 
-            for (ConstraintViolation<RequestStockDto> violation : violations) {
+            for (ConstraintViolation<RequestStockDTO> violation : violations) {
                 errorMessage.append(String.format("[%s: %s], ", violation.getPropertyPath(), violation.getMessage()));
             }
 
@@ -73,8 +73,8 @@ public class StockService {
         }
     }
 
-    public void validateAndCreateStock(RequestStockDto data) {
-        validateRequestStockDto(data);
+    public void validateAndCreateStock(RequestStockDTO data) {
+        validateRequestStockDTO(data);
 
         Stock novaAcao = new Stock(data);
         stockRepository.save(novaAcao);
